@@ -1,0 +1,26 @@
+{
+    "appKeys": {
+        "KEY_COUNT": 2,
+        "KEY_DEFINITION": 1,
+        "KEY_WORD": 0
+    },
+    "capabilities": [
+        ""
+    ],
+    "companyName": "vivek.v.sagar@gmail.com",
+    "longName": "Trial",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Trial",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "48cb77f1-18cf-491e-aa4c-992b8a583edb",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
