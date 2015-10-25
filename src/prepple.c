@@ -279,14 +279,14 @@ void handle_init(void) {
 	// Create a window and text layer
 	window = window_create();
   window_set_background_color(window, GColorDarkGreen);
-	title_layer = text_layer_create(GRect(0, 0, 144, 154));
+	title_layer = text_layer_create(GRect(0, 0, 144, 50));
   text_layer_body = text_layer_create(GRect(0,50, 144, 154));
   text_layer_body_definition = text_layer_create(GRect(144,50, 144, 154));
   text_layer_body_next = text_layer_create(GRect(0,160, 144, 154));
   text_layer_error = text_layer_create(GRect(0,130, 144, 154));
   
   text_layer_set_background_color(title_layer, GColorDarkGreen);
-  text_layer_set_text_color(title_layer, GColorMintGreen);
+  
   text_layer_set_background_color(text_layer_body, GColorDarkGreen);
   text_layer_set_background_color(text_layer_body_definition, GColorDarkGreen);
   text_layer_set_background_color(text_layer_body_next, GColorDarkGreen);
@@ -298,7 +298,8 @@ void handle_init(void) {
   
 	// Set the text, font, and text alignment
 	text_layer_set_text(title_layer, "Prepple");
-	text_layer_set_font(title_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  text_layer_set_text_color(title_layer, GColorIcterine);
+	text_layer_set_font(title_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
 	text_layer_set_text_alignment(title_layer, GTextAlignmentCenter);
   
 	text_layer_set_text(text_layer_body, "");
@@ -313,15 +314,16 @@ void handle_init(void) {
 	text_layer_set_text_alignment(text_layer_body_next, GTextAlignmentCenter);
   
   text_layer_set_text(text_layer_error, "");
-  text_layer_set_font(title_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+  text_layer_set_font(text_layer_error, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
 	text_layer_set_text_alignment(text_layer_error, GTextAlignmentCenter);
   
 	// Add the text layer to the window
-	layer_add_child(window_get_root_layer(window), text_layer_get_layer(title_layer));
+	
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_layer_error));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_layer_body));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_layer_body_definition));
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(text_layer_body_next));
+  layer_add_child(window_get_root_layer(window), text_layer_get_layer(title_layer));
   
   // Register AppMessage callbacks
   app_message_register_inbox_received(inbox_received_callback);
